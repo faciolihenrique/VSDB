@@ -6,7 +6,7 @@ public class umbraDBCSV implements iDB{
 
     // Construtor do banco de dados
     public umbraDBCSV(String name_of_file){
-        path = name_of_file;
+        path = name_of_file + ".csvdb";
 
         try {
             file = new File(path);
@@ -48,7 +48,11 @@ public class umbraDBCSV implements iDB{
         }
     }
 
-    public String[] searchDB(String info) throws NullPointerException{
+    public String getFromDB() throws NullPointerException {
+        throw new NullPointerException();
+    }
+
+    public String[] getFromDB(String info) throws NullPointerException{
         String linha;
         String[] valores;
         BufferedReader bufferedFile = this.readDB();
@@ -75,7 +79,7 @@ public class umbraDBCSV implements iDB{
     }
 
     //Sobrecarga de métodos
-    public String[] searchDB(String info1, String info2) throws NullPointerException {
+    public String[] getFromDB(String info1, String info2) throws NullPointerException {
         Boolean achou = false;
         String linha;
         String[] valores;
@@ -104,4 +108,5 @@ public class umbraDBCSV implements iDB{
 
         throw new NullPointerException();
     }
+
 }

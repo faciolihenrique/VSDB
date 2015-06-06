@@ -1,8 +1,8 @@
 import java.io.*;
 
-//Pattern Minimalist
 public interface iDB{
     public BufferedReader readDB();
-    public String[] searchDB(String info);
-    public String[] searchDB(String info1, String info2);
+    public String getFromDB();
+    public String[] getFromDB(String info);
+    public String[] getFromDB(String info1, String info2);
 }

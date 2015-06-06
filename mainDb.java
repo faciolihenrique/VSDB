@@ -1,31 +1,23 @@
 public class mainDb{
     public static void main(String args[]){
-        DBFactory factory = new DBFactory("teste.csvdb");
+        //Criacao da fabrica
+        DBFactory factory = new DBFactory("teste");
 
-        iDB dataBase = factory.getDB(TypeDB.CSV);
+        //Teste CSV
+        //Retorna um vetor de string
+        iDB objectDBCSV = factory.getDB(TypeDB.CSV);
+        String[] csv = null;
+        csv = objectDBCSV.getFromDB("Oi");
 
-        String[] valores = null;
-        try{
-            valores = dataBase.searchDB("Ola","meu amor");
-            System.out.println(valores[3]);
-        }
-        catch(NullPointerException e){
-            //e.printStackTrace();
-            System.out.println(e.getMessage());
-        }
+        System.out.println("Toda a linha do CSV que possua a palavra Oi:\n ");
+        System.out.println(csv[0] + ", " + csv[1] + ", " + csv[2] + ", " + csv[3] + ", " + csv[4]);
+
+        //Teste TXT
+        //Retorna uma unica string que contem todo o conteudo do arquivo
+        iDB objectDBTXT = factory.getDB(TypeDB.TXT);
+        String txt = null;
+        txt = objectDBTXT.getFromDB();
+        System.out.println("O arquivo em txt:\n");
+        System.out.println(txt);
     }
-
-    /*public static void main(String args[]){
-        umbraDBCSV dataBase = new umbraDBCSV("teste.csvdb");
-
-        String[] valores = null;
-        try{
-            valores = dataBase.searchDB("meudeus","foi");
-            System.out.println(valores[2]);
-        }
-        catch(NullPointerException e){
-            e.printStackTrace();
-            //System.out.println(e.getMessage());
-        }
-    }*/
 }
