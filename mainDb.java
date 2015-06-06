@@ -1,6 +1,10 @@
+//Apenas para Teste
+
 public class mainDb{
     public static void main(String args[]){
         //Criacao da fabrica
+        //Cada modulo deve colocar o nome do modulo (String) no construtor
+        //Nesse caso seria o módulo "teste"
         DBFactory factory = new DBFactory("teste");
 
         //Teste CSV
@@ -19,5 +23,8 @@ public class mainDb{
         txt = objectDBTXT.getFromDB();
         System.out.println("O arquivo em txt:\n");
         System.out.println(txt);
+
+        //Teste CSV
+        //Deve salvar qualquer tipo de objeto e de recuperá-lo!
     }
 }
