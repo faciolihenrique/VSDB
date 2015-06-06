@@ -24,7 +24,7 @@ public class mainDb{
         System.out.println("O arquivo em txt:\n");
         System.out.println(txt);
 
-        //Teste CSV
+        //Teste XML
         //Deve salvar qualquer tipo de objeto e de recuperá-lo!
     }
 }
