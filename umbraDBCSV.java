@@ -26,7 +26,7 @@ public class umbraDBCSV implements iDB{
         }
     }
 
-    public BufferedReader readDB(){
+    private BufferedReader readDB(){
         FileReader openedFile = null;
         //Faz o arquivo em disco ir para a memÃ³ria para agilizar a leitura
         BufferedReader bufferedFile = null;
@@ -41,7 +41,7 @@ public class umbraDBCSV implements iDB{
         return bufferedFile;
     }
 
-    public void closeDB(BufferedReader reader){
+    private void closeDB(BufferedReader reader){
         try{
             reader.close();
         }
@@ -50,11 +50,13 @@ public class umbraDBCSV implements iDB{
         }
     }
 
+    @Override
     public String getFromDB() throws NullPointerException, NoMethod {
-    	throw new NoMethod("Esse DB não suporta esse tipo de método, tente passar "
-				+ "string(s) como parâmetro");
+    	throw new NoMethod("Esse DB nï¿½o suporta esse tipo de mï¿½todo, tente passar "
+				+ "string(s) como parï¿½metro");
     }
 
+    @Override
     public String[] getFromDB(String info) throws NullPointerException{
         String linha;
         String[] valores;
@@ -81,7 +83,7 @@ public class umbraDBCSV implements iDB{
         throw new NullPointerException();
     }
 
-    //Sobrecarga de mÃ©todos
+    @Override
     public String[] getFromDB(String info1, String info2) throws NullPointerException {
         Boolean achou = false;
         String linha;
@@ -110,6 +112,16 @@ public class umbraDBCSV implements iDB{
         }
 
         throw new NullPointerException();
+    }
+
+    @Override
+    public boolean saveDB(Object obj)throws NullPointerException, NoMethod {
+    	throw new NoMethod("Esse DB nï¿½o suporta esse tipo de mï¿½todo");
+    }
+
+    @Override
+    public Object getObject()throws NullPointerException, NoMethod {
+    	throw new NoMethod("Esse DB nï¿½o suporta esse tipo de mï¿½todo");
     }
 
 }

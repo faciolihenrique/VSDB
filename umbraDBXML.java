@@ -5,6 +5,7 @@ import java.beans.XMLEncoder;
 public class umbraDBXML implements iDB{
 	private String path;
     private File file;
+	private XMLEncoder encoder = null;
 
     public umbraDBXML(String name_of_file){
     	path = name_of_file + ".xmldb";
@@ -25,11 +26,7 @@ public class umbraDBXML implements iDB{
         }
     }
 
-    public BufferedReader readDB() throws NullPointerException, NoMethod {
-    	throw new NoMethod("Esse DB não suporta esse tipo de método");
-    }
-
-    public XMLDecoder decodeDB(){
+    private XMLDecoder decodeDB(){
     	XMLDecoder decoder = null;
     	BufferedInputStream bufferedFile = null;
     	FileInputStream openedFile = null;
@@ -45,8 +42,7 @@ public class umbraDBXML implements iDB{
     	return decoder;
     }
 
-    public XMLEncoder encodeDB(){
-    	XMLEncoder encoder = null;
+    private XMLEncoder encodeDB(){
     	BufferedOutputStream bufferedFile = null;
     	FileOutputStream openedFile = null;
 
@@ -61,7 +57,7 @@ public class umbraDBXML implements iDB{
     	return encoder;
     }
 
-    public void closeDecoderDB(XMLDecoder decoder){
+    private void closeDecoderDB(XMLDecoder decoder){
         try{
             decoder.close();
         }
@@ -70,7 +66,7 @@ public class umbraDBXML implements iDB{
         }
     }
 
-    public void closeEncoderDB(XMLEncoder encoder){
+    private void closeEncoderDB(XMLEncoder encoder){
         try{
             encoder.close();
         }
@@ -79,6 +75,22 @@ public class umbraDBXML implements iDB{
         }
     }
 
+	@Override
+	public String getFromDB() throws NullPointerException, NoMethod {
+		throw new NoMethod("Esse DB nï¿½o suporta esse tipo de mï¿½todo");
+	}
+
+	@Override
+	public String[] getFromDB(String info) throws NullPointerException, NoMethod {
+		throw new NoMethod("Esse DB nï¿½o suporta esse tipo de mï¿½todo");
+	}
+
+	@Override
+	public String[] getFromDB(String info1, String info2) throws NullPointerException, NoMethod{
+		throw new NoMethod("Esse DB nï¿½o suporta esse tipo de mï¿½todo");
+	}
+
+	@Override
     public boolean saveDB(Object obj){
     	XMLEncoder encoder = this.encodeDB();
     	boolean salvou = false;
@@ -95,6 +107,7 @@ public class umbraDBXML implements iDB{
     	return salvou;
     }
 
+	@Override
     public Object getObject() throws NullPointerException {
     	XMLDecoder decoder = this.decodeDB();
     	Object obj = null;
@@ -113,16 +126,6 @@ public class umbraDBXML implements iDB{
 
     }
 
-    public String getFromDB() throws NullPointerException, NoMethod {
-    	throw new NoMethod("Esse DB não suporta esse tipo de método");
-    }
 
-    public String[] getFromDB(String info) throws NullPointerException, NoMethod {
-    	throw new NoMethod("Esse DB não suporta esse tipo de método");
-    }
-
-    public String[] getFromDB(String info1, String info2) throws NullPointerException, NoMethod{
-    	throw new NoMethod("Esse DB não suporta esse tipo de método");
-    }
 
 }

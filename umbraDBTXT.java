@@ -24,7 +24,7 @@ public class umbraDBTXT implements iDB{
         }
     }
 
-    public BufferedReader readDB(){
+    private BufferedReader readDB(){
         FileReader openedFile = null;
         //Faz o arquivo em disco ir para a memÃ³ria para agilizar a leitura
         BufferedReader bufferedFile = null;
@@ -39,7 +39,7 @@ public class umbraDBTXT implements iDB{
         return bufferedFile;
     }
 
-    public void closeDB(BufferedReader reader){
+    private void closeDB(BufferedReader reader){
         try{
             reader.close();
         }
@@ -48,6 +48,7 @@ public class umbraDBTXT implements iDB{
         }
     }
 
+    @Override
     public String getFromDB() throws NullPointerException{
         String linha;
         String valor = "";
@@ -70,13 +71,26 @@ public class umbraDBTXT implements iDB{
 
     }
 
+    @Override
     public String[] getFromDB(String info) throws NullPointerException, NoMethod {
-    	throw new NoMethod("Esse DB não suporta esse tipo de método, tente usar este método"
-				+ "sem passar parâmetros");
+    	throw new NoMethod("Esse DB nï¿½o suporta esse tipo de mï¿½todo, tente usar este mï¿½todo"
+				+ "sem passar parï¿½metros");
     }
+
+    @Override
     public String[] getFromDB(String info1, String info2) throws NullPointerException, NoMethod{
-    	throw new NoMethod("Esse DB não suporta esse tipo de método, tente usar este método"
-    						+ "sem passar parâmetros");
+    	throw new NoMethod("Esse DB nï¿½o suporta esse tipo de mï¿½todo, tente usar este mï¿½todo"
+    						+ "sem passar parï¿½metros");
+    }
+
+    @Override
+    public boolean saveDB(Object obj)throws NullPointerException, NoMethod {
+    	throw new NoMethod("Esse DB nï¿½o suporta esse tipo de mï¿½todo");
+    }
+
+    @Override
+    public Object getObject()throws NullPointerException, NoMethod {
+    	throw new NoMethod("Esse DB nï¿½o suporta esse tipo de mï¿½todo");
     }
 
 }
