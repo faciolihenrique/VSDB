@@ -11,17 +11,17 @@ public class DBFactory{
     public iDB getDB(TypeDB tipo){
         if(tipo == TypeDB.CSV){
             helper = new umbraDBCSV(path);
-            return helper;
         }
         else if(tipo == TypeDB.XML){
-            return null;
+            helper = new umbraDBXML(path);
         }
         else if(tipo == TypeDB.TXT){
             helper = new umbraDBTXT(path);
-            return helper;
         }
         else{
             return null;
         }
+
+        return helper;
     }
 }

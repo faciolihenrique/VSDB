@@ -5,10 +5,10 @@ import java.beans.XMLEncoder;
 public class umbraDBXML implements iDB{
 	private String path;
     private File file;
-    
+
     public umbraDBXML(String name_of_file){
     	path = name_of_file + ".xmldb";
-    	
+
     	try {
             file = new File(path);
             if( !file.exists() ) {
@@ -24,16 +24,16 @@ public class umbraDBXML implements iDB{
             e.printStackTrace();
         }
     }
-    
+
     public BufferedReader readDB() throws NullPointerException {
     	throw new NullPointerException();
     }
-    
+
     public XMLDecoder decodeDB(){
     	XMLDecoder decoder = null;
     	BufferedInputStream bufferedFile = null;
     	FileInputStream openedFile = null;
-    	
+
     	try {
     		openedFile = new FileInputStream(file);
     		bufferedFile = new BufferedInputStream(openedFile);
@@ -41,15 +41,15 @@ public class umbraDBXML implements iDB{
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-    	
+
     	return decoder;
     }
-    
+
     public XMLEncoder encodeDB(){
     	XMLEncoder encoder = null;
     	BufferedOutputStream bufferedFile = null;
     	FileOutputStream openedFile = null;
-    	
+
     	try {
     		openedFile = new FileOutputStream(file);
     		bufferedFile = new BufferedOutputStream(openedFile);
@@ -57,10 +57,10 @@ public class umbraDBXML implements iDB{
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-    	
+
     	return encoder;
     }
-    
+
     public void closeDecoderDB(XMLDecoder decoder){
         try{
             decoder.close();
@@ -69,7 +69,7 @@ public class umbraDBXML implements iDB{
             e.printStackTrace();
         }
     }
-    
+
     public void closeEncoderDB(XMLEncoder encoder){
         try{
             encoder.close();
@@ -78,14 +78,14 @@ public class umbraDBXML implements iDB{
             e.printStackTrace();
         }
     }
-    
+
     public boolean saveDB(Object obj){
     	XMLEncoder encoder = this.encodeDB();
     	boolean salvou = false;
     	try{
     		encoder.writeObject(obj);
     		salvou = true;
-    	} 
+    	}
     	catch(Exception e){
             e.printStackTrace();
         }
@@ -94,7 +94,7 @@ public class umbraDBXML implements iDB{
     	}
     	return salvou;
     }
-    
+
     public Object getObject() throws NullPointerException {
     	XMLDecoder decoder = this.decodeDB();
     	Object obj = null;
@@ -112,17 +112,17 @@ public class umbraDBXML implements iDB{
         throw new NullPointerException();
 
     }
-   
+
     public String getFromDB() throws NullPointerException {
         throw new NullPointerException();
     }
-    
+
     public String[] getFromDB(String info) throws NullPointerException {
         throw new NullPointerException();
     }
-    
+
     public String[] getFromDB(String info1, String info2) throws NullPointerException{
         throw new NullPointerException();
     }
-    
+
 }
