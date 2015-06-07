@@ -5,7 +5,7 @@ public class mainDb{
         //Criacao da fabrica
         //Cada modulo deve colocar o nome do modulo (String) no construtor
         //Nesse caso seria o módulo "teste"
-        DBFactory factory = new DBFactory("teste");
+        DBFactory factory = new DBFactory("file/teste");
 
         //Teste CSV
         //Retorna um vetor de string
