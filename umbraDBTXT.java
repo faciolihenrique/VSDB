@@ -70,11 +70,13 @@ public class umbraDBTXT implements iDB{
 
     }
 
-    public String[] getFromDB(String info) throws NullPointerException {
-        throw new NullPointerException();
+    public String[] getFromDB(String info) throws NullPointerException, NoMethod {
+    	throw new NoMethod("Esse DB não suporta esse tipo de método, tente usar este método"
+				+ "sem passar parâmetros");
     }
-    public String[] getFromDB(String info1, String info2) throws NullPointerException{
-        throw new NullPointerException();
+    public String[] getFromDB(String info1, String info2) throws NullPointerException, NoMethod{
+    	throw new NoMethod("Esse DB não suporta esse tipo de método, tente usar este método"
+    						+ "sem passar parâmetros");
     }
 
 }

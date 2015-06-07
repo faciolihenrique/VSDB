@@ -1,5 +1,7 @@
 import java.io.*;
 
+import novoVSDB.NoMethod;
+
 public class umbraDBCSV implements iDB{
     private String path;
     private File file;
@@ -48,8 +50,9 @@ public class umbraDBCSV implements iDB{
         }
     }
 
-    public String getFromDB() throws NullPointerException {
-        throw new NullPointerException();
+    public String getFromDB() throws NullPointerException, NoMethod {
+    	throw new NoMethod("Esse DB não suporta esse tipo de método, tente passar "
+				+ "string(s) como parâmetro");
     }
 
     public String[] getFromDB(String info) throws NullPointerException{

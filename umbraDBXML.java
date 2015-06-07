@@ -25,8 +25,8 @@ public class umbraDBXML implements iDB{
         }
     }
 
-    public BufferedReader readDB() throws NullPointerException {
-    	throw new NullPointerException();
+    public BufferedReader readDB() throws NullPointerException, NoMethod {
+    	throw new NoMethod("Esse DB não suporta esse tipo de método");
     }
 
     public XMLDecoder decodeDB(){
@@ -113,16 +113,16 @@ public class umbraDBXML implements iDB{
 
     }
 
-    public String getFromDB() throws NullPointerException {
-        throw new NullPointerException();
+    public String getFromDB() throws NullPointerException, NoMethod {
+    	throw new NoMethod("Esse DB não suporta esse tipo de método");
     }
 
-    public String[] getFromDB(String info) throws NullPointerException {
-        throw new NullPointerException();
+    public String[] getFromDB(String info) throws NullPointerException, NoMethod {
+    	throw new NoMethod("Esse DB não suporta esse tipo de método");
     }
 
-    public String[] getFromDB(String info1, String info2) throws NullPointerException{
-        throw new NullPointerException();
+    public String[] getFromDB(String info1, String info2) throws NullPointerException, NoMethod{
+    	throw new NoMethod("Esse DB não suporta esse tipo de método");
     }
 
 }
