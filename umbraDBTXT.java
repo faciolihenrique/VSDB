@@ -73,24 +73,24 @@ public class umbraDBTXT implements iDB{
 
     @Override
     public String[] getFromDB(String info) throws NullPointerException, NoMethod {
-    	throw new NoMethod("Esse DB n�o suporta esse tipo de m�todo, tente usar este m�todo"
-				+ "sem passar par�metros");
+    	throw new NoMethod("Esse DB não suporta esse tipo de método, tente usar este método"
+				+ "sem passar parâmetros");
     }
 
     @Override
     public String[] getFromDB(String info1, String info2) throws NullPointerException, NoMethod{
-    	throw new NoMethod("Esse DB n�o suporta esse tipo de m�todo, tente usar este m�todo"
-    						+ "sem passar par�metros");
+    	throw new NoMethod("Esse DB não suporta esse tipo de método, tente usar este método"
+    						+ "sem passar parâmetros");
     }
 
     @Override
     public boolean saveDB(Object obj)throws NullPointerException, NoMethod {
-    	throw new NoMethod("Esse DB n�o suporta esse tipo de m�todo");
+    	throw new NoMethod("Esse DB não suporta esse tipo de método");
     }
 
     @Override
     public Object getObject()throws NullPointerException, NoMethod {
-    	throw new NoMethod("Esse DB n�o suporta esse tipo de m�todo");
+    	throw new NoMethod("Esse DB não suporta esse tipo de método");
     }
 
 }

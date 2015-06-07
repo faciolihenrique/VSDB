@@ -77,17 +77,17 @@ public class umbraDBXML implements iDB{
 
 	@Override
 	public String getFromDB() throws NullPointerException, NoMethod {
-		throw new NoMethod("Esse DB n�o suporta esse tipo de m�todo");
+		throw new NoMethod("Esse DB não suporta esse tipo de método");
 	}
 
 	@Override
 	public String[] getFromDB(String info) throws NullPointerException, NoMethod {
-		throw new NoMethod("Esse DB n�o suporta esse tipo de m�todo");
+		throw new NoMethod("Esse DB não suporta esse tipo de método");
 	}
 
 	@Override
 	public String[] getFromDB(String info1, String info2) throws NullPointerException, NoMethod{
-		throw new NoMethod("Esse DB n�o suporta esse tipo de m�todo");
+		throw new NoMethod("Esse DB não suporta esse tipo de método");
 	}
 
 	@Override

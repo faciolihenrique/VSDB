@@ -1,7 +1,5 @@
 import java.io.*;
 
-import novoVSDB.NoMethod;
-
 public class umbraDBCSV implements iDB{
     private String path;
     private File file;
@@ -52,8 +50,8 @@ public class umbraDBCSV implements iDB{
 
     @Override
     public String getFromDB() throws NullPointerException, NoMethod {
-    	throw new NoMethod("Esse DB n�o suporta esse tipo de m�todo, tente passar "
-				+ "string(s) como par�metro");
+    	throw new NoMethod("Esse DB não suporta esse tipo de método, tente passar "
+				+ "string(s) como parâmetro");
     }
 
     @Override
@@ -116,12 +114,12 @@ public class umbraDBCSV implements iDB{
 
     @Override
     public boolean saveDB(Object obj)throws NullPointerException, NoMethod {
-    	throw new NoMethod("Esse DB n�o suporta esse tipo de m�todo");
+    	throw new NoMethod("Esse DB não suporta esse tipo de método");
     }
 
     @Override
     public Object getObject()throws NullPointerException, NoMethod {
-    	throw new NoMethod("Esse DB n�o suporta esse tipo de m�todo");
+    	throw new NoMethod("Esse DB não suporta esse tipo de método");
     }
 
 }

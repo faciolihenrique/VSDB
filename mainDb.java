@@ -1,5 +1,4 @@
 //Apenas para Teste
-
 public class mainDb{
 
     public static void main(String args[]){
@@ -28,5 +27,8 @@ public class mainDb{
         //Teste XML
         //Deve salvar qualquer tipo de objeto e de recuperá-lo!
         iDB objectDBXML = factory.getDB(TypeDB.XML);
+        //teste novoObjeto = new teste();
+        //novoObjeto.cresce();
+        //objectDBXML.saveDB(novoObjeto);
     }
 }
