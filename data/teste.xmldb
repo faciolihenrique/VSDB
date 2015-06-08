@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_40" class="java.beans.XMLDecoder">
+ <object class="ObjectForTestsPurposeOnly" id="ObjectForTestsPurposeOnly0">
+  <void class="ObjectForTestsPurposeOnly" method="getField">
+   <string>idade</string>
+   <void method="set">
+    <object idref="ObjectForTestsPurposeOnly0"/>
+    <int>3</int>
+   </void>
+  </void>
+ </object>
+</java>
