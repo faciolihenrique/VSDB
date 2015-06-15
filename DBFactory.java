@@ -16,9 +16,6 @@ public class DBFactory{
         else if(tipo == TypeDB.TXT){
             helper = new UmbraDBTXT(path);
         }
-        else{
-            return null;
-        }
 
         return helper;
     }
